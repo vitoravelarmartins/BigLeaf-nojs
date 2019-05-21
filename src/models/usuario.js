@@ -18,6 +18,12 @@ module.exports = (sequelize, DataTypes) => {
           }
         }
       },
+
+      classMethods: {
+        isSenha_hash:(encodeSenha_hash, senha_hash) => bcrypt.compareSync(senha_hash,encodeSenha_hash),
+
+      },
+
       tableName: 'usuarios',
       sequelize
     },
