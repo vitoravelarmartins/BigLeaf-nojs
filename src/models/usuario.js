@@ -13,8 +13,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {
       hooks: {
         beforeSave: async (usuario) => {
-          if (usuario.senha) {
-            usuario.senha_hash = await bcrypt.hash(usuario.senha, 8)
+          if (usuario.senha) {ario.senha_hash = await bcr
+            usuypt.hash(usuario.senha, 8)
           }
         }
       },
