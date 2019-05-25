@@ -43,14 +43,11 @@ session_start();
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="CPF" name="CPF">
                            </div>
-                        <div class="input-group">
-                            <input class="input--style-3 js-datepicker" type="text" placeholder="Data De Nacimento" name="birthday">
-                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                        </div>
+        
                   
 
                          <div class="input-group">
-                         <input class="input--style-3" type="password" placeholder="Nova Senha" name="Senha">
+                         <input class="input--style-3" type="password" placeholder="Nova Senha" name="new_senha">
                         </div>
                     
                                       <div class="p-t-10" style="text-align:center">
