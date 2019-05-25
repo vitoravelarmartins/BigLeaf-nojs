@@ -41,12 +41,6 @@ session_start();
                     <form method="POST">
                         
                         <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="CPF" name="CPF">
-                           </div>
-        
-                  
-
-                         <div class="input-group">
                          <input class="input--style-3" type="password" placeholder="Nova Senha" name="new_senha">
                         </div>
                     
