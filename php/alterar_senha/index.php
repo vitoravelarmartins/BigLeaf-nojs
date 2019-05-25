@@ -66,15 +66,15 @@ session_start();
                         <!-- <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Telefone" name="phone">
                         </div> -->
-                         <div class="input-group">
+                         <!-- <div class="input-group">
                          <input class="input--style-3" type="password" placeholder="Nova Senha" name="Senha">
-                        </div>
+                        </div> -->
                     
                     <!-- <div class="input-group">
                      <input class="input--style-3" type="password" placeholder="Repita Sua Senha" name="Senha">
                     </div>           -->
                         <div class="p-t-10" style="text-align:center">
-                            <button class="btn btn--pill btn--green" type="submit">Alterar</button>
+                            <button class="btn btn--pill btn--green" type="submit">Verificar</button>
                         </div>
                     </form>
                 </div>
