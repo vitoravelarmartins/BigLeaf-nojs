@@ -1,3 +1,7 @@
+<?PHP
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,11 +37,9 @@
             <div class="card card-3">
                 <div class="card-heading"></div>
                 <div class="card-body">
-                    <h2 style="text-align:center" class="title">Cadastro</h2>
+                    <h2 style="text-align:center" class="title">Digite sua Nova senha</h2>
                     <form method="POST">
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Nome" name="name">
-                        </div>
+                        
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="CPF" name="CPF">
                            </div>
@@ -45,32 +47,14 @@
                             <input class="input--style-3 js-datepicker" type="text" placeholder="Data De Nacimento" name="birthday">
                             <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                         </div>
-                        <div class="input-group">
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="gender">
-                                    <option disabled="disabled" selected="selected">Género</option>
-                                    <option>Masculino</option>
-                                    <option>Feminino</option>
-                                    <option>Não Informar</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>
-                        <div class="input-group">
-                            <input class="input--style-3" type="email" placeholder="E-mail" name="email">
-                        </div>
-                        <div class="input-group">
-                            <input class="input--style-3" type="text" placeholder="Telefone" name="phone">
-                        </div>
-                        <div class="input-group">
-                         <input class="input--style-3" type="password" placeholder="Senha" name="Senha">
+                  
+
+                         <div class="input-group">
+                         <input class="input--style-3" type="password" placeholder="Nova Senha" name="Senha">
                         </div>
                     
-                    <div class="input-group">
-                     <input class="input--style-3" type="password" placeholder="Repita Sua Senha" name="Senha">
-                    </div>          
-                        <div class="p-t-10" style="text-align:center">
-                            <button class="btn btn--pill btn--green" type="submit">Cadastrar</button>
+                                      <div class="p-t-10" style="text-align:center">
+                            <button class="btn btn--pill btn--green" type="submit">Alterar</button>
                         </div>
                     </form>
                 </div>
