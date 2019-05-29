@@ -22,7 +22,8 @@ body {
    background: -moz-linear-gradient(-135deg, #000000, #7e7f86);
    background: linear-gradient(-135deg, #ffffff, #fffafa);
 
-   background-image: url("../../../perfiltest/images/lalala.png") !important;
+   
+   background-image: url(../../lalala.png);
    height: 100%;
    background-repeat: no-repeat!important;
    background-size: cover!important;
@@ -36,6 +37,7 @@ body {
   
 }
 .background1{
+  
 }
 .fundoperfil{
   height:98%;
