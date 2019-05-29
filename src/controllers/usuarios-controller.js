@@ -49,7 +49,7 @@ class UsuariosController {
         usuario_id: usuario.id,
         nome: dados.nome,
         cpf: dados.cpf,
-        data_nascimento: dados.data_nascimento,
+        data_nascimento: dados.data_nascimento.replace(/(\d{2})\/(\d{2})\/(\d{4})/, "$3-$2-$1"),
         genero: dados.genero,
         telefone: dados.telefone
       }

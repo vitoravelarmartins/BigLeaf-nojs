@@ -37,7 +37,7 @@ session_start();
 
 			<div class="wrap-login100">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="images/LogoSemFundoBordeWhite.png" alt="IMG">
+					<img src="images/LogoSemFundoBordeWhite.png" alt="logotipo BigLeaf-Seja Benvido Pagina de Login">
 				</div>
 
 				<form action="result.php" class="login100-form validate-form" method="post">
@@ -46,7 +46,7 @@ session_start();
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="Email Necessário">
-						<input class="input100" type="email" name="email" placeholder="Email">
+						<input class="input100" type="email" name="email" placeholder="Email" alt="Digite seu email">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-envelope" aria-hidden="true"></i>
@@ -54,7 +54,7 @@ session_start();
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Senha Necessária">
-						<input class="input100" type="password" placeholder="Senha" name="pass">
+						<input class="input100" type="password" placeholder="Senha" name="pass"  alt="Digite sua senha">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<i class="fa fa-lock" aria-hidden="true"></i>
@@ -62,7 +62,7 @@ session_start();
 					</div>
 
 					<div class="container-login100-form-btn">
-						<input type="submit" class="login100-form-btn" value="Entrar">
+						<input type="submit" class="login100-form-btn" value="Entrar" alt="Entrar no perfil">
 
 
 					</div>
@@ -71,12 +71,22 @@ session_start();
 						<span class="txt1">
 							Esqueceu
 						</span>
-						<a class="txt2" href="#">
+						<a class="txt2" href="http://localhost/bigleaf_nodejs/php/alterar_senha/index-alterar-senha.php" alt="Esqueceu sua senha? Entre Aqui para alterar senha">
 							Nome de usuario / Senha?
 						</a>
 					</div>
 					<div class="text-center p-t-12">
-						<span class="txt2" style="color:red">
+						<span class="txt2" style="color:blue" alt="Senha Alterada com sucesso">
+							<?php
+							if (isset($_SESSION["senha_alterada"])) {
+								echo ($_SESSION["senha_alterada"]);
+								unset($_SESSION["senha_alterada"]);
+							}
+							?>
+						</span>
+					</div>
+					<div class="text-center p-t-12">
+						<span class="txt2" style="color:red" alt="Senha Invalida">
 							<?php
 							if (isset($_SESSION["erro"])) {
 								echo ($_SESSION["erro"]);
@@ -87,7 +97,7 @@ session_start();
 					</div>
 
 					<div class="text-center p-t-136">
-						<a class="txt2" href="http://localhost:8081/usuarios/novo">
+						<a class="txt2" href="http://localhost:8081/usuarios/novo" alt="Crie uma conta BigLeaf">
 							Crie uma conta
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

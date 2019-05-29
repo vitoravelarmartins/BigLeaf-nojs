@@ -15,7 +15,7 @@ session_start();
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Cadastro</title>
+    <title>Nova Senha</title>
 
     <!-- Icons font CSS-->
     <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
@@ -33,19 +33,20 @@ session_start();
 
 <body>
     <div class="page-wrapper bg-gra-01 p-t-180 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w780"> 
+        <div class="wrapper wrapper--w780">
             <div class="card card-3">
                 <div class="card-heading"></div>
                 <div class="card-body">
                     <h2 style="text-align:center" class="title">Digite sua Nova senha</h2>
-                    <form method="POST">
-                        
+                    <form action="alterar-senha.php" method="POST">
+
+
                         <div class="input-group">
-                         <input class="input--style-3" type="password" placeholder="Nova Senha" name="new_senha">
+                            <input class="input--style-3" type="password" placeholder="Nova Senha" name="nova_senha" alt="Digite sua nova senha">
                         </div>
-                    
-                                      <div class="p-t-10" style="text-align:center">
-                            <button class="btn btn--pill btn--green" type="submit">Alterar</button>
+
+                        <div class="p-t-10" style="text-align:center">
+                            <button class="btn btn--pill btn--green" type="submit" alt="Alterar senha">Alterar</button>
                         </div>
                     </form>
                 </div>
