@@ -39,12 +39,31 @@ body {
 .background1{
   
 }
-.fundoperfil{
-  height:98%;
+
+.alter_butt{
+ background-color: #ffffff15;
+ border: transparent;
+ width: 100%;
+ border-radius: 10px;
+ color:rgba(255, 255, 255, 0.541);
 
 }
+.fundoperfil{
+  height:100%;
+
+}
+.data_cor{
+  color:black;
+}
+
+.perfil_esquerdo{
+  background-color: #ffffff15;
+  border-radius: 10px;
+
+}
+
 .fundoconteudo{
-  height:55%;
+  height:100%;
 }
 .panel-body {
   background-color: transparent
