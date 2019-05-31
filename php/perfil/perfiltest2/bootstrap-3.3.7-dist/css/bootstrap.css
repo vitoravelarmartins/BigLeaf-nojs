@@ -41,13 +41,23 @@ body {
 }
 
 .alter_butt{
- background-color: #ffffff15;
+ background-color: #ffffff18;
  border: transparent;
  width: 100%;
  border-radius: 10px;
- color:rgba(255, 255, 255, 0.541);
+ color:rgba(255, 255, 255, 0.527);
 
 }
+
+.alter_butt_2{
+  background-color: #00ff1569;
+  border: transparent;
+  width: 100%;
+  border-radius: 10px;
+  color:rgba(255, 255, 255, 0.527);
+ 
+ }
+
 .fundoperfil{
   height:100%;
 
