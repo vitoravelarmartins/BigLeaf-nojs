@@ -1,3 +1,10 @@
+<?php
+
+error_reporting(0);
+ini_set(“display_errors”, 0 );
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -33,15 +40,22 @@ $_UP['erros'][4] = 'Não foi feito o upload do arquivo';
 
 //Verifica se houve algum erro com o upload. Sem sim, exibe a mensagem do erro
 if ($_FILES['arquivo']['error'] != 0) {
-	die("Não foi possivel fazer o upload, erro: <br />" . $_UP['erros'][$_FILES['arquivo']['error']]);
-	exit; //Para a execução do script
+	// die("Não foi possivel fazer o upload, erro: <br />" . $_UP['erros'][$_FILES['arquivo']['error']]);
+	// exit; //Para a execução do script
+
+	echo "
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/bigleaf_nodejs/php/perfil/perfiltest2/index.php'>
+					<script type=\"text/javascript\">
+						alert(\"Não foi feito o upload do arquivo.\");
+					</script>
+				";
 }
 
 //Faz a verificação da extensao do arquivo
 $extensao = strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 if (array_search($extensao, $_UP['extensoes']) === false) {
 	echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://http://localhost/bigleaf_nodejs/php/perfil/perfiltest2/index.php'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/bigleaf_nodejs/php/perfil/perfiltest2/index.php'>
 					<script type=\"text/javascript\">
 						alert(\"A imagem não foi cadastrada extesão inválida.\");
 					</script>
@@ -73,15 +87,19 @@ else {
 		//Upload efetuado com sucesso, exibe a mensagem
 		// $query = mysqli_query($conn, "INSERT INTO usuarios (
 		// nome_imagem) VALUES('$nome_final')");
-		$query = mysqli_query($conn, "update perfils set foto_url='$nome_final' where usuario_id=3;");
-		// echo "
-		// 	<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/Aula/upload_imagem.php'>
-		// 	<script type=\"text/javascript\">
-		// 		alert(\"Imagem cadastrada com Sucesso.\");
-		// 	</script>
-		// ";	
-		echo ($_FILES['arquivo']['name']);
-		echo ($extensao);
+		$id_query=$_SESSION['id'];
+		$query = mysqli_query($conn, "update perfils set foto_url='$nome_final' where usuario_id='$id_query';");
+		echo "
+			<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/bigleaf_nodejs/php/perfil/perfiltest2/index.php'>
+			<script type=\"text/javascript\">
+				alert(\"Imagem cadastrada com Sucesso.\");
+			</script>
+		";
+		$_SESSION['foto_url']=$nome_final;
+		//header('location:http://localhost/bigleaf_nodejs/php/perfil/perfiltest2/index.php');
+
+		// echo ($_FILES['arquivo']['name']);
+		// echo ($extensao);
 	} else {
 		//Upload não efetuado com sucesso, exibe a mensagem
 		// echo "

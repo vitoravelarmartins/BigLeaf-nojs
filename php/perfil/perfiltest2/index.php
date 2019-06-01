@@ -28,8 +28,12 @@ session_start();
                     <div class="dropdown-menu dropright" style="background-color:transparent">
                         <form method="POST" action="proc_upload.php" enctype="multipart/form-data" class="alter_butt">
                             <input type="file" class="alter_butt" name="arquivo">
-                            <input type="submit" class="alter_butt_2" value="Cadastrar"><br>
+                            <input type="submit" class="col-sm-7 alter_butt_2" value="Cadastrar">
                         </form>
+                        <form method="POST" action="delet_fot_user.php">
+                            <input type="submit" class="col-sm-5 alter_butt_3" value="Deletar"><br>
+                        </form>
+
                     </div>
                 </div><br><br><br>
 
@@ -37,20 +41,48 @@ session_start();
                 <div class="text-center">
                     <br>
 
-                    <a href="troca_imagen"><img src="https://cdn.discordapp.com/attachments/409105872716038147/575470359252566037/Capturar.PNG" class="avatar img-circle img-thumbnail" alt="avatar"></a>
+                    <img src=<?php
+                                $nada = "";
+                                if (strcmp($_SESSION['foto_url'], $nada) == 0) {
+                                    echo ('foto_user/0.png');
+                                } else {
+                                    echo ('foto_user/' . $_SESSION['foto_url']);
+                                }
+
+                                ?> class="avatar img-circle img-thumbnail pximg" alt="avatar" style="width:170px; height:168px;"><br>
                     <h2 style='color:darkred'><?php
-                                                echo ($_SESSION['tipo_sanguineo']);
+                                                $nada = "";
+                                                if (strcmp($_SESSION['tipo_sanguineo'], $nada) == 0) {
+                                                    echo ('--');
+                                                } else {
+                                                    echo ($_SESSION['tipo_sanguineo']);
+                                                }
+                                                
                                                 ?></h2>
-                    <div class="btn-group dropright alter_butt ">
-                        <button type="button " class=" dropdown-toggle dropdown-toggle-split alter_butt center-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alterar tipo Sanguineo</button>
+                    <div>
 
-                        </button>
-                        <div class="dropdown-menu dropright" style="background-color:transparent">
-                            <form method="POST" action="proc_upload.php" enctype="multipart/form-data" class="alter_butt">
+                        <form method="post" action="Tipo_Sanguineo.php">
+                            <div class="form-group">
+                                <select class="alter_butt center-block" id="exampleFormControlSelect1" name="tipo">
+                                    <option disabled selected>Alterar tipo Sanguineo</option>
+                                    <option class="option-style">O-</option>
+                                    <option class="option-style">O+</option>
+                                    <option class="option-style">A-</option>
+                                    <option class="option-style">A+</option>
+                                    <option class="option-style">B-</option>
+                                    <option class="option-style">B+</option>
+                                    <option class="option-style">AB-</option>
+                                    <option class="option-style">AB+</option>
+                                </select>
+                                <input type="submit" class="col-sm-5 alter_butt_2" value="Alterar"><br>
+                            </div>
+                            
+                        </form>
 
-                                <input type="checkbox" class="alter_butt" value="nada"> AB+
-                            </form>
-                        </div>
+
+
+
+
                     </div>
                     <hr>
 
@@ -92,7 +124,7 @@ session_start();
                                                                                                                         if (strcmp($_SESSION['alergias'], $nada) == 0) {
                                                                                                                             echo ('Adcionar');
                                                                                                                         } else {
-                                                                                                                            $_SESSION['alergias'];
+                                                                                                                            echo ($_SESSION['alergias']);
                                                                                                                         }
 
                                                                                                                         ?></li>
@@ -108,11 +140,11 @@ session_start();
         <div class="col-sm-7">
             <div class="row">
                 <div class="col-sm-10">
-                    <h1><?php echo ($_SESSION['nome']) ?></h1>
+                    <h1 class="titul-name"><?php echo ($_SESSION['nome']) ?></h1>
                 </div>
                 <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="https://cdn.discordapp.com/attachments/409105872716038147/575453242251804672/22.png"></a>
 
-                    <button class="btn btn-danger pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Sair</button>>
+                    <a href="http://localhost/bigleaf_nodejs/php/login/"><button class="btn btn-danger pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Sair</button></a>
                 </div>
 
             </div>
@@ -231,7 +263,7 @@ session_start();
                                         <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
 
                                     <div class="col-xs-6">
@@ -250,10 +282,10 @@ session_start();
                                 <div class="col-xs-12">
                                     <br>
                                     <hr>
-                                    
+
                                 </div>
                             </form>
-                  
+
 
 
                             <div class="form-group">
@@ -275,7 +307,7 @@ session_start();
                                         <h4>Descrição</h4>
                                     </label>
                                     <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaa</label>
+                                    <label><?php echo ($_SESSION['nome']) ?></label>
 
                                 </div>
                             </div>
@@ -334,7 +366,7 @@ session_start();
 
 
 
-                        <form class="form" action="result_perfil.php" method="post" id="registrationForm">
+                            <form class="form" action="result_perfil.php" method="post" id="registrationForm">
                                 <div class="form-group">
 
                                     <div class="col-xs-6">
@@ -345,7 +377,7 @@ session_start();
                                         <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
                                     </div>
                                 </div>
-                                
+
                                 <div class="form-group">
 
                                     <div class="col-xs-6">
@@ -364,7 +396,7 @@ session_start();
                                 <div class="col-xs-12">
                                     <br>
                                     <hr>
-                                    
+
                                 </div>
                             </form>
 
@@ -440,7 +472,7 @@ session_start();
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <br>
-                                    
+
                                 </div>
                             </div>
                             </form>

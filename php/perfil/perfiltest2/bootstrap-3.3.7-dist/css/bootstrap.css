@@ -58,6 +58,28 @@ body {
  
  }
 
+ .alter_butt_3{
+  background-color: #ff000069;
+  border: transparent;
+  width: 100%;
+  border-radius: 10px;
+  color:rgba(255, 255, 255, 0.527);
+ 
+ }
+
+ .titul-name{
+   font-size: 50px;
+   font-weight: bold;
+   
+ }
+
+ .option-style{
+   color:red;
+   background: #ffffff69;
+   background: rgb(0, 0, 0);
+   
+ }
+
 .fundoperfil{
   height:100%;
 
