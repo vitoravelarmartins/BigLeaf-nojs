@@ -19,7 +19,7 @@ session_start();
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-3 ">
-            <div class="col-sm-12 background-perfiliimagen fundoperfil"></br>
+            <div class="col-sm-12 background-perfiliimagen fundoperfil">
 
                 <div class="btn-group dropright alter_butt ">
                     <button type="button " class=" dropdown-toggle dropdown-toggle-split alter_butt center-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Alterar Imagem</button>
@@ -27,7 +27,7 @@ session_start();
                     </button>
                     <div class="dropdown-menu dropright" style="background-color:transparent">
                         <form method="POST" action="proc_upload.php" enctype="multipart/form-data" class="alter_butt">
-                            <input type="file" class="alter_butt">
+                            <input type="file" class="alter_butt" name="arquivo">
                             <input type="submit" class="alter_butt_2" value="Cadastrar"><br>
                         </form>
                     </div>
@@ -75,8 +75,8 @@ session_start();
                                                             ?> </li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Telefone</strong></span>
                         <?php
-                        echo($_SESSION['telefone']);                        
-                         ?></li>
+                        echo ($_SESSION['telefone']);
+                        ?></li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Genero</strong></span><?php echo ($_SESSION['genero']) ?></li>
                 </ul>
                 <div class="row">
@@ -96,7 +96,6 @@ session_start();
                                                                                                                         }
 
                                                                                                                         ?></li>
-
                 </ul>
                 <div class="row">
                     <br>
@@ -122,7 +121,7 @@ session_start();
                     <ul class="nav nav-tabs">
                         <li class="active"><a data-toggle="tab" href="#home">Alergias</a></li>
                         <li><a data-toggle="tab" href="#messages">Receitas</a></li>
-                        <li><a data-toggle="tab" href="#settings">Consultas</a></li>
+                        <li><a data-toggle="tab" href="#settings">Exames</a></li>
                     </ul>
 
 
@@ -221,39 +220,52 @@ session_start();
                             <h2></h2>
 
 
-                            <form class="form" action="##" method="post" id="registrationForm">
+                            <form class="form" action="result_perfil.php" method="post" id="registrationForm">
                                 <div class="form-group">
 
                                     <div class="col-xs-6">
                                         <label for="first_name">
                                             <h4>Data</h4>
                                         </label>
-                                        <input type="date" class="form-control" name="date1" id="date" placeholder="" title="enter your .">
+                                        <input type="date" class="form-control" name="date1" id="date" placeholder="" title="enter your ."><br>
+                                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group">
 
                                     <div class="col-xs-6">
                                         <label for="last_name">
                                             <h4>Descrição</h4>
                                         </label>
-                                        <input type="text" class="form-control" name="Descrição1" id="text" placeholder="......." title="enter your .">
+                                        <input type="text" class="form-control" name="Descrição1" id="text" placeholder="Descrição" title="enter your ."><br>
+                                        <input type="file" class="alter_butt">
+
+
+
                                     </div>
+
+                                </div>
+
+                                <div class="col-xs-12">
+                                    <br>
+                                    <hr>
+                                    
                                 </div>
                             </form>
-
+                  
 
 
                             <div class="form-group">
 
 
-
+                                <!-- RECEITA -->
                                 <div class="col-xs-6">
                                     <label for="last_name">
                                         <h4>Data</h4>
                                     </label>
                                     <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaa</label>
+                                    <label>receita</label>
                                 </div>
                             </div>
 
@@ -312,11 +324,7 @@ session_start();
                             </div>
                             <button type="button" class="alter_butt center-block">Vizualizar imagem</button>
                             <div class="form-group">
-                                <div class="col-xs-12">
-                                    <br>
-                                    <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
-                                    <button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> salvar</button>>
-                                </div>
+
                             </div>
                             </form>
 
@@ -326,26 +334,38 @@ session_start();
 
 
 
-                            <form class="form" action="##" method="post" id="registrationForm">
+                        <form class="form" action="result_perfil.php" method="post" id="registrationForm">
                                 <div class="form-group">
 
                                     <div class="col-xs-6">
                                         <label for="first_name">
                                             <h4>Data</h4>
                                         </label>
-                                        <input type="date" class="form-control" name="data1" id="date" placeholder="Consulta1" title="enter your first name if any.">
+                                        <input type="date" class="form-control" name="date1" id="date" placeholder="" title="enter your ."><br>
+                                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
                                     </div>
                                 </div>
+                                
                                 <div class="form-group">
 
                                     <div class="col-xs-6">
                                         <label for="last_name">
-                                            <h4>Horario</h4>
+                                            <h4>Descrição</h4>
                                         </label>
-                                        <input type="time" class="form-control" name="horario1" id="appt" placeholder="Horario De Atendimento" title="enter your last name if any.">
+                                        <input type="text" class="form-control" name="Descrição1" id="text" placeholder="Descrição" title="enter your ."><br>
+                                        <input type="file" class="alter_butt">
+
+
+
                                     </div>
+
                                 </div>
 
+                                <div class="col-xs-12">
+                                    <br>
+                                    <hr>
+                                    
+                                </div>
                             </form>
 
                             <div class="form-group">
@@ -420,9 +440,7 @@ session_start();
                             <div class="form-group">
                                 <div class="col-xs-12">
                                     <br>
-                                    <button class="btn btn-lg btn-success pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> salvar</button>>
-
-                                    <button class="btn btn-lg btn-success pull-left" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> salvar</button>>
+                                    
                                 </div>
                             </div>
                             </form>
