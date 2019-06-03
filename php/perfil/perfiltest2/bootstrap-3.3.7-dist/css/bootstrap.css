@@ -67,6 +67,25 @@ body {
  
  }
 
+ .alter_butt_4{
+  background-color: #ffffff;
+  border: transparent;
+  width: 100%;
+  border-radius: 10px;
+  color:rgb(0, 0, 0);
+  align-content: center;
+ 
+ }
+
+ .alter_butt_5{
+  background-color: #00ff15f6;
+  border: transparent;
+  width: 100%;
+  border-radius: 10px;
+  color:rgba(0, 0, 0, 0.884);
+ 
+ }
+
  .titul-name{
    font-size: 50px;
    font-weight: bold;

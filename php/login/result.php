@@ -68,7 +68,23 @@ if (crypt($senha, $hash_senha_db1) === $hash_senha_db1) {
         $result_receita = mysqli_query($conn, $query_receita);
         $array_db_receita =  mysqli_fetch_array($result_receita);
         echo(print_r($array_db_receita));
-        $_SESSION['dara_receitas'] = $array_db_receita['data'];
+        $_SESSION['data_receitas'] = $array_db_receita['data'];
+        $_SESSION['descricao'] = $array_db_receita['descricao'];
+        $_SESSION['arquivo_url_receita'] = $array_db_receita['arquivo_url'];
+
+
+
+        $id_query = $_SESSION['id'];
+        $query_pega_receita = "SELECT * FROM receitas where usuario_id='$id_query'";
+
+        $result_tr_receita = mysqli_query($conn, $query_pega_receita);
+        $array_tb_receita =  mysqli_fetch_all($result_tr_receita);
+        $cont = count($array_tb_receita);
+        // $i = 1;
+        // $descricao_db = $array_tb_receita[$i][3];
+        $_SESSION['array_receitas'] =$array_tb_receita;
+        $_SESSION['cont'] = $cont;
+        
 
         //FINAL QUERY RECIETAS
 
