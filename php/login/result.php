@@ -39,17 +39,17 @@ if (crypt($senha, $hash_senha_db1) === $hash_senha_db1) {
 
     if (mysqli_num_rows($result) > 0) {
         echo ('<br>' . 'sim é maior' . '<br>');
-        
-        echo(print_r($array_db));
-        
+
+        echo (print_r($array_db));
+
         echo ("<br>" . $hash_senha_db1 . "</br>");
-        echo("menino Bom"."<br>");
-        
+        echo ("menino Bom" . "<br>");
+
         //QUERY PERFIL
         $query_perfil = "SELECT * FROM perfils where usuario_id ='$id_db'";
         $result_perfil = mysqli_query($conn, $query_perfil);
         $array_db_perfil =  mysqli_fetch_array($result_perfil);
-        echo(print_r($array_db_perfil));
+        echo (print_r($array_db_perfil));
         $_SESSION['id'] = $id_db;
         $_SESSION['nome'] = $array_db_perfil['nome'];
         $_SESSION['cpf'] = $array_db_perfil['cpf'];
@@ -67,7 +67,7 @@ if (crypt($senha, $hash_senha_db1) === $hash_senha_db1) {
         $query_receita = "SELECT * FROM receitas where usuario_id ='$id_db'";
         $result_receita = mysqli_query($conn, $query_receita);
         $array_db_receita =  mysqli_fetch_array($result_receita);
-        echo(print_r($array_db_receita));
+        echo (print_r($array_db_receita));
         $_SESSION['data_receitas'] = $array_db_receita['data'];
         $_SESSION['descricao'] = $array_db_receita['descricao'];
         $_SESSION['arquivo_url_receita'] = $array_db_receita['arquivo_url'];
@@ -82,26 +82,46 @@ if (crypt($senha, $hash_senha_db1) === $hash_senha_db1) {
         $cont = count($array_tb_receita);
         // $i = 1;
         // $descricao_db = $array_tb_receita[$i][3];
-        $_SESSION['array_receitas'] =$array_tb_receita;
+        $_SESSION['array_receitas'] = $array_tb_receita;
         $_SESSION['cont'] = $cont;
-        
+        //FINAL QUERY RECEITAS
 
-        //FINAL QUERY RECIETAS
+        //QUERY EXAMES
+        $query_exame = "SELECT * FROM exames where usuario_id ='$id_db'";
+        $result_exame = mysqli_query($conn, $query_exame);
+        $array_db_exame =  mysqli_fetch_array($result_exame);
+        echo (print_r($array_db_exame));
+        $_SESSION['data_exames'] = $array_db_exame['data'];
+        $_SESSION['descricao'] = $array_db_exame['descricao'];
+        $_SESSION['arquivo_url_exame'] = $array_db_exame['arquivo_url'];
+
+
+
+        $id_query = $_SESSION['id'];
+        $query_pega_exame = "SELECT * FROM exames where usuario_id='$id_query'";
+
+        $result_tr_exame = mysqli_query($conn, $query_pega_exame);
+        $array_tb_exame =  mysqli_fetch_all($result_tr_exame);
+        $cont_exame = count($array_tb_exame);
+        // $i = 1;
+        // $descricao_db = $array_tb_exame[$i][3];
+        $_SESSION['array_exames'] = $array_tb_exame;
+        $_SESSION['cont_exame'] = $cont_exame;
+        //FINAL QUERY EXAMES
+
+
+
 
 
 
 
 
         header('location:http://localhost/bigleaf_nodejs/php/perfil/perfiltest2/index.php');
-
     } else {
         $_SESSION['erro'] = 'Usuario ou Senha Inválida';
         header('location:index.php');
-        
-      
     }
-}else {
+} else {
     $_SESSION['erro'] = 'Usuario ou Senha Inválida';
     header('location:index.php');
 }
-    

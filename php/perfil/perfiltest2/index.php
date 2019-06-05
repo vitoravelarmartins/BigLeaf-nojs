@@ -115,13 +115,19 @@ session_start();
                         echo ($_SESSION['telefone']);
                         ?></li>
                     <li class="list-group-item text-right"><span class="pull-left"><strong>Genero</strong></span><?php echo ($_SESSION['genero']) ?></li>
+                    
                 </ul>
                 <div class="row">
                     <br>
                 </div>
+                
                 <div>
-                    <h3 class="text-center perfil_esquerdo">Alergias</h3>
+                    <h3 class="text-center perfil_esquerdo">Informações</h3>
                 </div>
+                <div class="perfil_esquerdo_2">
+                    <label class="">Alergias</label>
+                </div>
+
                 <ul class="list-group perfil_esquerdo">
 
 
@@ -146,10 +152,15 @@ session_start();
 
                         ?></li>
                 </ul>
+
+                <div class="perfil_esquerdo_2">
+                    <label class="">Medicamentos Controlados</label>
+                </div>
                 <ul class="list-group perfil_esquerdo">
 
 
-                    <li class="list-group-item text-right"><span class="pull-left"><strong>Hist. Medico:</strong></span>
+                    <li class="list-group-item text-right"><span class="pull-left"><strong>Medicamento<br>
+                                Controlado:</strong></span>
                         <form method="post" action="popAlergia-cad.php"></form>
 
                         <?php
@@ -157,7 +168,7 @@ session_start();
                         $nada = "";
                         if (strcmp($_SESSION['historico_medico'], $nada) == 0) {
                             echo ('<form method="post" action="popHist-cad.php">
-                            <input class="row" type="text" placeholder="Subs.Alergica" name="hist">
+                            <input class="col-sm-7" type="text" placeholder="Subs.Alergica" name="hist">
                             <br>
                             <input type="submit" class="alter_butt_5" value="Alterar"><br>
                             </form>');
@@ -172,6 +183,7 @@ session_start();
                     </li>
                 </ul>
                 <div class="row">
+
                     <br>
                 </div>
             </div>
@@ -184,10 +196,14 @@ session_start();
                 <div class="col-sm-10">
                     <h1 class="titul-name"><?php echo ($_SESSION['nome']) ?></h1>
                 </div>
+
                 <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="https://cdn.discordapp.com/attachments/409105872716038147/575453242251804672/22.png"></a>
 
+
                     <a href="http://localhost/bigleaf_nodejs/php/login/"><button class="btn btn-danger pull-right" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Sair</button></a>
+
                 </div>
+
 
             </div>
             <div class="row">
@@ -196,6 +212,7 @@ session_start();
                         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
                         <li><a data-toggle="tab" href="#messages">Receitas</a></li>
                         <li><a data-toggle="tab" href="#settings">Exames</a></li>
+                        <li><a style="font-weight: bold;" href="javascript:void(0)" onClick="MM_openBrWindow('http://localhost:3000/chat','','scrollbars=no, width=800, height=370, left=0, top=0')"><input type="submit" class="alter_butt_6" value="CHAT"></a></li>
                     </ul>
 
 
@@ -205,89 +222,19 @@ session_start();
                             <form class="form" action="##" method="post" id="registrationForm">
                                 <div class="form-group">
 
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>Tipo de A</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="last_name">
-                                            <h4>Sobrenome</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="phone">
-                                            <h4>telefone</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="Telefone.">
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-xs-6">
-                                        <label for="mobile">
-                                            <h4>Celular</h4>
-                                        </label>
-                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="Celular.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>Email</h4>
-                                        </label>
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="email.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="email">
-                                            <h4>cidade</h4>
-                                        </label>
-                                        <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password">
-                                            <h4>Password</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
-                                        <label for="password2">
-                                            <h4>Verify</h4>
-                                        </label>
-                                        <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                                    </div>
-                                </div>
-                                <div class="form-group">
                                     <div class="col-xs-12">
-                                        <br>
-                                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
-                                        <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> limpar</button>
+                                        <iframe width="720" height="345" src="https://www.youtube.com/embed/_GLNDoYxG0E"></iframe>
+
                                     </div>
                                 </div>
+
                             </form>
 
 
 
+
                         </div>
+
                         <!--/tab-pane-->
                         <!-- <receitas> -->
                         <div class="tab-pane" id="messages">
@@ -330,14 +277,14 @@ session_start();
                                     <label for="email">
                                         <h4>DATA/HORA</h4><br>
                                         <h6><?php
-                                            $descricao_db = $array_tb_receita = $_SESSION['array_receitas'];
+                                            $descricao_db_exame = $array_tb_receita = $_SESSION['array_receitas'];
                                             $cont = $_SESSION['cont'];
 
                                             for ($i = 0; $i < $cont; $i++) {
 
 
-                                                $descricao_db = $array_tb_receita[$i][2];
-                                                echo ($descricao_db . '<hr>');
+                                                $descricao_db_exame = $array_tb_receita[$i][2];
+                                                echo ($descricao_db_exame . '<hr>');
                                             }
 
                                             ?></h6>
@@ -394,82 +341,70 @@ session_start();
 
 
 
+
                                     </label>
                                     <br>
 
                                 </div>
                                 <div class="col-xs-3 ">
                                     <label for="email">
-                                        <h4>--</h4><br>
+                                        <h4 style="color:transparent">--</h4><br>
                                         <h6><?php
                                             $descricao_db = $array_tb_receita = $_SESSION['array_receitas'];
                                             $cont = $_SESSION['cont'];
 
                                             for ($i = 0; $i < $cont; $i++) {
-                                                
-                                                $a='<form method="post" action="deleta-receita.php">';
-                                                $b='<input type="hidden" name="id_file" value="';
-                                                $c='"><input type="submit" class="alter_butt_3" value="Excluir Receita">';
-                                                $d='</form>';
-                                                
+
+                                                $a = '<form method="post" action="deleta-receita.php">';
+                                                $b = '<input type="hidden" name="id_file" value="';
+                                                $c = '"><input type="submit" class="alter_butt_3" value="Excluir Receita">';
+                                                $d = '</form>';
+
 
 
                                                 $descricao_db = $array_tb_receita[$i][4];
                                                 // echo ('<a href="foto_receitas/'.$descricao_db .'">'.'foto'.'</a>'.'<br>');
-                                                echo($a.$b.$descricao_db.$c.$d.'<hr>');
-                                                
+                                                echo ($a . $b . $descricao_db . $c . $d . '<hr>');
                                             }
 
                                             ?></h6>
-                                            
-                                    
-                                        
+
+
+
 
                                     </label>
                                     <br>
-                             
-                                </div>
 
+                                </div>
+                                <!-- -----------------------------FINAL DE RECEITAS ----------------------------->
 
                             </div>
+
 
 
 
                             </form>
 
                         </div>
-                        <!--/tab--->
+                        <!--EXAMES--->
                         <div class="tab-pane" id="settings">
 
+                            <h2></h2>
 
 
-                            <form class="form" action="result_perfil.php" method="post" id="registrationForm">
+                            <form class="form" action="exames_cad.php" method="post" id="registrationForm" enctype="multipart/form-data">
                                 <div class="form-group">
 
-                                    <div class="col-xs-6">
-                                        <label for="first_name">
-                                            <h4>Data</h4>
-                                        </label>
-                                        <input type="date" class="form-control" name="date1" id="date" placeholder="" title="enter your ."><br>
-                                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-
-                                    <div class="col-xs-6">
+                                    <div class="col-xs-12">
                                         <label for="last_name">
                                             <h4>Descrição</h4>
                                         </label>
-                                        <input type="text" class="form-control" name="Descrição1" id="text" placeholder="Descrição" title="enter your ."><br>
-                                        <input type="file" class="alter_butt">
-
-
-
+                                        <!-- <input type="date" class="form-control" name="data" id="date" placeholder="" title="enter your ."><br> -->
+                                        <input type="text" class="form-control" name="descricao" id="text" placeholder="Descrição" title="enter your ."><br>
+                                        <input type="file" class="alter_butt" name='arquivo'><br>
+                                        <button class="btn btn-lg btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Salvar</button>
                                     </div>
-
                                 </div>
-
                                 <div class="col-xs-12">
                                     <br>
                                     <hr>
@@ -477,92 +412,135 @@ session_start();
                                 </div>
                             </form>
 
-                            <div class="form-group">
-                                <div class="col-xs-6 background1">
-                                    <label for="phone">
-                                        <h4>Data</h4>
-                                    </label>
-                                    <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaaaa</label>
-                                </div>
-                            </div>
+
 
                             <div class="form-group">
-                                <div class="col-xs-6">
-                                    <label for="mobile">
-                                        <h4>Horario</h4>
-                                    </label>
-                                    <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaaaa</label>
-                                </div>
-                                <button type="button" class="alter_butt center-block">Vizualizar imagem</button>
-                                <div class="form-group">
-                                </div>
-                            </div>
-                            <div class="form-group">
 
-                                <div class="col-xs-6">
+
+                                <!-- EXAME -->
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-xs-3">
                                     <label for="email">
-                                        <h4>Data</h4>
+                                        <h4>DATA/HORA</h4><br>
+                                        <h6><?php
+                                            $descricao_db_exame = $array_tb_exame = $_SESSION['array_exames'];
+                                            $cont_exame = $_SESSION['cont_exame'];
+
+                                            for ($i = 0; $i < $cont_exame; $i++) {
+
+
+                                                $descricao_db_exame = $array_tb_exame[$i][2];
+                                                echo ($descricao_db_exame . '<hr>');
+                                            }
+
+                                            ?></h6>
+
                                     </label>
                                     <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaaaa</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
 
-                                <div class="col-xs-6">
+                                </div>
+
+                                <div class="col-xs-3">
                                     <label for="email">
-                                        <h4>Horario</h4>
+                                        <h4>DESCRIÇÃO</h4><br>
+                                        <h6><?php
+                                            $descricao_db_exame = $array_tb_exame = $_SESSION['array_exames'];
+                                            $cont_exame = $_SESSION['cont_exame'];
+
+                                            for ($i = 0; $i < $cont_exame; $i++) {
+
+
+                                                $descricao_db_exame = $array_tb_exame[$i][3];
+                                                echo ($descricao_db_exame . '<hr>');
+                                            }
+
+                                            ?></h6>
+
                                     </label>
                                     <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaaaa</label>
-                                </div>
-                            </div>
-                            <button type="button" class="alter_butt center-block">Vizualizar imagem</button>
-                            <div class="form-group">
-                            </div>
-                            <div class="form-group">
 
-                                <div class="col-xs-6">
-                                    <label for="password">
-                                        <h4>Data</h4>
+                                </div>
+
+
+                                <div class="col-xs-3 ">
+                                    <label for="email">
+                                        <h4>EXAME</h4><br>
+                                        <h6><?php
+                                            $descricao_db_exame = $array_tb_exame = $_SESSION['array_exames'];
+                                            $cont_exame = $_SESSION['cont_exame'];
+
+                                            for ($i = 0; $i < $cont_exame; $i++) {
+
+                                                $a = '<a style="font-weight: bold;" href="javascript:void(0)" onClick="MM_openBrWindow(';
+                                                $b = "'foto_exames/";
+                                                $c = "','','scrollbars=no, width=500, height=270, left=0, top=0')";
+                                                $d = '">Visualizar Exame</a>';
+
+
+
+                                                $descricao_db_exame = $array_tb_exame[$i][4];
+                                                // echo ('<a href="foto_exames/'.$descricao_db_exame .'">'.'foto'.'</a>'.'<br>');
+                                                echo ($a . $b . $descricao_db_exame . $c . $d . '<hr>');
+                                            }
+
+                                            ?></h6>
+
+
+
                                     </label>
                                     <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaaaa</label>
 
                                 </div>
-                            </div>
-                            <div class="form-group">
+                                <div class="col-xs-3 ">
+                                <label for="email">
+                                        <h4 style="color:transparent">--</h4><br>
+                                        <h6><?php
+                                            $descricao_db_exame = $array_tb_exame = $_SESSION['array_exames'];
+                                            $cont_exame = $_SESSION['cont_exame'];
 
-                                <div class="col-xs-6">
-                                    <label for="password2">
-                                        <h4>Horario</h4>
+                                            for ($i = 0; $i < $cont_exame; $i++) {
+
+                                                $a = '<form method="post" action="deleta-exame.php">';
+                                                $b = '<input type="hidden" name="id_file" value="';
+                                                $c = '"><input type="submit" class="alter_butt_3" value="Excluir Exame">';
+                                                $d = '</form>';
+
+
+
+                                                $descricao_db_exame = $array_tb_exame[$i][4];
+                                                // echo ('<a href="foto_exames/'.$descricao_db_exame .'">'.'foto'.'</a>'.'<br>');
+                                                echo ($a . $b . $descricao_db_exame . $c . $d . '<hr>');
+                                            }
+
+                                            ?></h6>
+
+
+
+
                                     </label>
                                     <br>
-                                    <label>aaaaaaaaaaaaaaaaaaaaaaaa</label>
-                                </div>
-                            </div>
-                            <button type="button" class="alter_butt center-block">Vizualizar imagem</button>
-                            <div class="form-group">
-                            </div>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <br>
 
                                 </div>
+
+
                             </div>
+
+
+
                             </form>
-                        </div>
 
+                        </div>
+                        <!--/tab-->
                     </div>
                     <!--/tab-->
                 </div>
-                <!--/tab-->
+                <!--/row-->
             </div>
-            <!--/row-->
+            <div class="col-sm-1"></div>
         </div>
-        <div class="col-sm-1"></div>
-    </div>
-    <!--/-9-->
+        <!--/-9-->
 </body>
